@@ -1,10 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom sticky-top">
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           <img src="logo.svg" style={{ width: "20%" }} alt="logo" />
         </a>
         <button
