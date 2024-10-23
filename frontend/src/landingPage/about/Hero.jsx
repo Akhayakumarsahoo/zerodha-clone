@@ -2,14 +2,16 @@ function Hero() {
   return (
     <div className="container">
       <div className="row my-5 py-5">
-        <h1 className="fs-2 offset-2">
-          We pioneered the discount broking model in India. <br /> Now, we are
-          breaking ground with our technology.
-        </h1>
+        <div className="col-12 col-md-10 offset-md-2">
+          <h1 className="fs-2 fs-md-2">
+            We pioneered the discount broking model in India. <br /> Now, we are
+            breaking ground with our technology.
+          </h1>
+        </div>
       </div>
       <hr />
       <div className="row my-5 py-5 text-muted fs-6">
-        <div className="col-5 offset-1 pe-5">
+        <div className="col-12 col-md-5 offset-md-1 pe-md-5">
           <p>
             We kick-started operations on the 15th of August, 2010 with the goal
             of breaking all barriers that traders and investors face in India in
@@ -27,7 +29,7 @@ function Hero() {
             all Indian retail trading volumes.
           </p>
         </div>
-        <div className="col-5 pe-5">
+        <div className="col-12 col-md-5 pe-md-5">
           <p>
             In addition, we run a number of popular open online educational and
             community initiatives to empower retail traders and investors.

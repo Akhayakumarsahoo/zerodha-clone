@@ -3,11 +3,14 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom sticky-top">
       <div className="container">
+        {/* Logo with responsive width */}
         <a className="navbar-brand" href="/">
-          <img src="logo.svg" style={{ width: "20%" }} alt="logo" />
+          <img src="logo.svg" style={{ width: "100px" }} alt="logo" />
         </a>
+
+        {/* Toggler (hamburger menu) for mobile */}
         <button
-          className="navbar-toggler"
+          className="navbar-toggler border-0"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -17,9 +20,11 @@ function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+
+        {/* Collapsible navbar links */}
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item ">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li className="nav-item">
               <Link className="nav-link" aria-current="page" to="/signup">
                 Signup
               </Link>
@@ -43,11 +48,6 @@ function Navbar() {
               <Link className="nav-link" to="/support">
                 Support
               </Link>
-            </li>
-            <li className="nav-item">
-              <button className="nav-link">
-                <i className="fa-solid fa-bars"></i>
-              </button>
             </li>
           </ul>
         </div>

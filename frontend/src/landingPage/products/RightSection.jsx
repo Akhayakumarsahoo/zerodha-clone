@@ -9,39 +9,19 @@ function RightSection({
 }) {
   return (
     <div className="container">
-      <div className="row my-5 border-top ">
-        <div className="col-5 my-5 p-5 align-self-center">
+      <div className="row my-5 border-top">
+        <div className="col-lg-5 col-12 my-5 p-5 align-self-center">
           <h1>{heading}</h1>
-          <p> {para}</p>
+          <p>{para}</p>
           {link1 && (
             <a href="" style={{ textDecoration: "none" }} className="me-5">
               {link1}&nbsp;&nbsp;
               <i className="fa-solid fa-arrow-right-long"></i>
             </a>
           )}
-          {link2 && (
-            <a href="" style={{ textDecoration: "none" }}>
-              {link2}&nbsp;&nbsp;
-              <i className="fa-solid fa-arrow-right-long"></i>
-            </a>
-          )}
-          <br />
-          <div className="mt-5">
-            {googlePlay && (
-              <a href="" className="mt-5">
-                <img src={googlePlay} alt="googlePlay" />
-              </a>
-            )}
-            &nbsp;&nbsp;&nbsp;
-            {appStore && (
-              <a href="" className="mt-5">
-                <img src={appStore} alt="appStore" />
-              </a>
-            )}
-          </div>
         </div>
-        <div className="col-7 ps-5">
-          <img src={imgURL} alt="rightImage" style={{ width: "100%" }} />
+        <div className="col-lg-7 col-12 ps-lg-5">
+          <img src={imgURL} alt="rightImage" className="img-fluid" />
         </div>
       </div>
     </div>

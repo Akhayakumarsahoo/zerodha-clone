@@ -1,9 +1,10 @@
 function Stats() {
   return (
     <div className="container mt-5 pt-5">
-      <div className="row">
-        <div className="col-6">
+      <div className="row align-items-center">
+        <div className="col-12 col-md-6">
           <h2>Trust with confidence</h2>
+
           <div className="mt-5">
             <h3 className="fs-5">Customer-first always</h3>
             <p className="text-muted">
@@ -12,13 +13,15 @@ function Stats() {
               exchange volumes in India.
             </p>
           </div>
+
           <div className="mt-4">
             <h3 className="fs-5">No spam or gimmicks</h3>
             <p className="text-muted">
               No gimmicks, spam, "gamification", or annoying push notifications.
-              High quality apps that you use at your pace, the way you like.
+              High-quality apps that you use at your pace, the way you like.
             </p>
           </div>
+
           <div className="mt-4">
             <h3 className="fs-5">The Zerodha universe</h3>
             <p className="text-muted">
@@ -27,6 +30,7 @@ function Stats() {
               needs.
             </p>
           </div>
+
           <div className="mt-4">
             <h3 className="fs-5">Do better with money</h3>
             <p className="text-muted">
@@ -36,15 +40,17 @@ function Stats() {
             </p>
           </div>
         </div>
-        <div className="col-6 ">
-          <img src="ecosystem.png" alt="ecosystem" style={{ width: "100%" }} />
-          <div className="offset-2">
-            <a href="" className="mx-5" style={{ textDecoration: "none" }}>
+
+        <div className="col-12 col-md-6 text-center mt-5 mt-md-0">
+          <img src="ecosystem.png" alt="ecosystem" className="img-fluid" />
+          <div className="mt-4">
+            <a href="#" className="mx-4" style={{ textDecoration: "none" }}>
               Explore our products
-              <i className="fa-solid fa-arrow-right-long"></i>
+              <i className="fa-solid fa-arrow-right-long ms-2"></i>
             </a>
-            <a href="" style={{ textDecoration: "none" }}>
-              Try Kite demo <i className="fa-solid fa-arrow-right-long"></i>
+            <a href="#" className="mx-4" style={{ textDecoration: "none" }}>
+              Try Kite demo
+              <i className="fa-solid fa-arrow-right-long ms-2"></i>
             </a>
           </div>
         </div>

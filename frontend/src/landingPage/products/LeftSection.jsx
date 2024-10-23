@@ -1,4 +1,3 @@
-import React from "react";
 function LeftSection({
   imgURL,
   heading,
@@ -11,12 +10,12 @@ function LeftSection({
   return (
     <div className="container border-top">
       <div className="row my-5">
-        <div className="col-8 pe-5">
-          <img src={imgURL} alt="leftImage" />
+        <div className="col-lg-8 col-12 mb-4 mb-lg-0">
+          <img src={imgURL} alt="leftImage" className="img-fluid" />
         </div>
-        <div className="col-4 ">
+        <div className="col-lg-4 col-12">
           <h1>{heading}</h1>
-          <p> {para}</p>
+          <p>{para}</p>
           {link1 && (
             <a href="" style={{ textDecoration: "none" }} className="me-5">
               {link1}&nbsp;&nbsp;
@@ -32,14 +31,17 @@ function LeftSection({
           <br />
           <div className="mt-5">
             {googlePlay && (
-              <a href="" className="mt-5">
-                <img src={googlePlay} alt="googlePlay" />
+              <a href="">
+                <img
+                  src={googlePlay}
+                  alt="googlePlay"
+                  className="img-fluid me-3"
+                />
               </a>
             )}
-            &nbsp;&nbsp;&nbsp;
             {appStore && (
-              <a href="" className="mt-5">
-                <img src={appStore} alt="appStore" />
+              <a href="">
+                <img src={appStore} alt="appStore" className="img-fluid" />
               </a>
             )}
           </div>
