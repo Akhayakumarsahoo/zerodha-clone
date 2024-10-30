@@ -5,13 +5,7 @@ const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
-app.use(
-  cors({
-    origin: "https://https://dashboard-zerodha.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(bodyParser.json());
 
 const mongoose = require("mongoose");
