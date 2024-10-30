@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState, createContext } from "react";
 import BuyActionWindow from "./BuyActionWindow";
 
-const GeneralContext = React.createContext({
+const GeneralContext = createContext({
   openBuyWindow: (uid) => {},
   closeBuyWindow: () => {},
 });

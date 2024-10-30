@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import axios from "axios";
 
@@ -8,7 +8,7 @@ const Positions = () => {
   let [allPositions, setAllPositions] = useState([]);
 
   useEffect(() => {
-    axios.get("https://zerodha-backend-21fn.onrender.com/allPositions").then((res) => {
+    axios.get("/api/allPositions").then((res) => {
       setAllPositions(res.data);
     });
   }, []);
