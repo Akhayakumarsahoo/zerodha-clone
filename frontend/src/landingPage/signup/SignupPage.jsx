@@ -1,4 +1,55 @@
+import { useState } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+
 function SignupPage() {
+  const navigate = useNavigate();
+  const [inputValue, setInputValue] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInputValue({
+      ...inputValue,
+      [name]: value,
+    });
+  };
+  const handleError = (msg) => {
+    toast.error(msg);
+  };
+  const handleSuccess = (msg) => {
+    toast.success(msg);
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await axios.post(
+        "/api/signup",
+        {
+          ...inputValue,
+        },
+        { withCredentials: true }
+      );
+      const { success, message } = data;
+      if (success) {
+        navigate("/");
+        handleSuccess(message);
+      } else {
+        handleError(message);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+    setInputValue({
+      ...inputValue,
+      username: "",
+      email: "",
+      password: "",
+    });
+  };
   return (
     <div className="signupPage" id="signup">
       <div className="row d-flex flex-column flex-lg-row p-5">
@@ -6,28 +57,51 @@ function SignupPage() {
           <img src="/signup.png" alt="signup" className="img-fluid" />
         </div>
         <div className="col-12 col-lg-4 pt-5 offset-lg-1">
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <h2 className="text-muted">Signup now</h2>
             <p>Or track your existing application.</p>
             <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
+              type="text"
+              name="username"
+              placeholder="username"
+              id="username"
+              className="form-control mb-3"
+              required
+              onChange={handleChange}
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              id="email"
+              className="form-control mb-3"
+              required
+              onChange={handleChange}
+            />
+            <div className="invalid-feedback">Please provide a valid email</div>
+            <input
+              type="password"
+              name="password"
+              placeholder="password"
               id="name"
               className="form-control mb-3"
+              required
+              onChange={handleChange}
             />
-            <p className="fs-6 text-muted">
-              You will receive an OTP on your number
-            </p>
+
             <button
               className="btn btn-primary border-0 w-100"
               style={{ backgroundColor: "#3878d1" }}
+              type="submit"
             >
               Continue
             </button>
           </form>
           <p className="mt-2">OR</p>
-          <a href="" className="text-decoration-none">
+          <a
+            href="https://dashboard-zerodha.vercel.app"
+            className="text-decoration-none"
+          >
             Use as a Guest
           </a>
         </div>
