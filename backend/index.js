@@ -32,7 +32,13 @@ const MONGO_URL = process.env.MONGO_URL;
 //   console.log(`App is listining to port http://localhost:${PORT}`);
 // });
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://zerodha-akhi.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
